@@ -1,0 +1,62 @@
+<ion-content [fullscreen]="true">
+  <ion-card-header style="align-items: center;">
+    <img src="../../../assets/img/login.png"  height="50%" width="50%"/>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="wrapform">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+        <ion-item>
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            formControlName="emailLogin"
+          ></ion-input>
+          <ng-container
+          *ngIf="
+            (loginForm.controls['emailLogin'].hasError('email') ||
+            loginForm.controls['emailLogin'].hasError('required')) &&
+            loginForm.controls['emailLogin'].touched
+          "
+          >
+          <small class="error-message"> Debe ingresar un correo válido </small>
+        </ng-container>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            formControlName="passwordLogin"
+          ></ion-input>
+          <ng-container
+          *ngIf="
+            (loginForm.controls['passwordLogin'].hasError('required')) &&
+            loginForm.controls['passwordLogin'].touched
+          "
+          >
+          <small class="error-message"> Debe ingresar una contraseña </small>
+        </ng-container>
+        </ion-item>
+        <ion-button
+          type="submit"
+          [disabled]="!loginForm.valid"
+          expand="block"
+          class="btn-login">Ingresar
+        </ion-button>
+        <ion-button
+          type="button"
+          expand="block"
+          color="tertiary"
+          fill="outline"
+          routerLink="/signup"
+          >Registrarse
+        </ion-button>
+      </form>
+    </div>
+  </ion-card-content>
+</ion-content>

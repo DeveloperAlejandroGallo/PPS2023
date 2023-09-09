@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ajg-pps-2023": {
+      "hosting": {
+        "app": [
+          "ajg-pps-2023"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ajg-pps-2023"
+  }
+}

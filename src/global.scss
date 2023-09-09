@@ -24,3 +24,19 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+
+.error-message {
+  display: block;
+  color: #ff5c5c;
+  background-color: #fff;
+  border: 1px solid #d52c2c;
+  padding: 5px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+
+.btn {
+  margin: 2px 2px 2px 2px;
+}
