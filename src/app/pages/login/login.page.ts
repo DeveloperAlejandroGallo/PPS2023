@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angula
 import { AuthService } from 'src/app/services/auth.service';
 import { MensajesService } from 'src/app/services/mensajes.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
-import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-login',
@@ -49,5 +49,39 @@ export class LoginPage implements OnInit {
 
     }
 
+    loginAutomatico(perfil: string) {
+      switch (perfil) {
+        case 'admin':
+          this.loginForm.setValue({
+            emailLogin: 'admin@admin.com',
+            passwordLogin: '111111',
+          });
+          break;
+        case 'invitado':
+          this.loginForm.setValue({
+            emailLogin: 'invitado@invitado.com',
+            passwordLogin: '222222',
+          });
+          break;
+        case 'usuario':
+          this.loginForm.setValue({
+            emailLogin: 'usuario@usuario.com',
+            passwordLogin: '333333',
+          });
+          break;
+        case 'anonimo':
+          this.loginForm.setValue({
+            emailLogin: 'anonimo@anonimo.com',
+            passwordLogin: '444444',
+          });
+          break;
+        case 'tester':
+          this.loginForm.setValue({
+            emailLogin: 'tester@tester.com',
+            passwordLogin: '555555',
+          });
+          break;
+    }
+  }
 
 }

@@ -16,6 +16,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { ComponentsModule } from './components/components.module';
+import { ToastMsgService } from './services/toast-msg.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,8 +34,9 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    ComponentsModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ToastMsgService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

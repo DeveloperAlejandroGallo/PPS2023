@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-card-header style="align-items: center;">
     <img src="../../../assets/img/login.png"  height="50%" width="50%"/>
   </ion-card-header>
@@ -11,7 +11,7 @@
             type="email"
             name="email"
             id="email"
-            placeholder="Email"
+            placeholder="Correo Electrónico"
             formControlName="emailLogin"
           ></ion-input>
           <ng-container
@@ -30,7 +30,7 @@
             type="password"
             name="password"
             id="password"
-            placeholder="Password"
+            placeholder="Contraseña"
             formControlName="passwordLogin"
           ></ion-input>
           <ng-container
@@ -59,4 +59,28 @@
       </form>
     </div>
   </ion-card-content>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" >
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="loginAutomatico('admin')">
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="loginAutomatico('invitado')">
+        <ion-icon name="man-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="loginAutomatico('usuario')">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="loginAutomatico('anonimo')">
+        <ion-icon name="help-circle-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="loginAutomatico('tester')">
+        <ion-icon name="bug-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
 </ion-content>

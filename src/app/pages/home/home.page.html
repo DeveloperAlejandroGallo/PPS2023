@@ -1,8 +1,7 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header
+  [titulo]="title"
+  [backButton]="true"
+></app-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -10,4 +9,15 @@
       <ion-title size="large">home</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card>
+    <img alt="Home" src="../../../assets/img/Home2.png" height="50%" width="50%" />
+    <ion-card-header>
+      <ion-card-title>Bienvenido</ion-card-title>
+      <ion-card-subtitle>App Base</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Aplicacion base en Ionic para el resto de las apps
+    </ion-card-content>
+  </ion-card>
 </ion-content>
